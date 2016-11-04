@@ -80,7 +80,7 @@ var MAT = mat4.create(),
 
 BonePrototype.update = function() {
     var entity = this.entity,
-        transform = entity.getComponent("transform.Transform"),
+        transform = entity.getComponent("transform.Transform3D") || entity.getComponent("transform.Transform2D"),
         uniform = this.uniform,
         inheritPosition, inheritScale, inheritRotation,
         mat, position, scale, rotation,

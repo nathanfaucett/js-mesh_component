@@ -21,7 +21,6 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "@nathanfaucett/transform_components": "git@github.com:nathanfaucett/js-transform_components.git",
     "@nathanfaucett/geometry": "git@github.com:nathanfaucett/js-geometry.git",
     "@nathanfaucett/task": "^0.0.7",
     "gulp-jsbeautifier": "^2.0.3",
@@ -32,6 +31,7 @@
     "zuul": "^3.11.0"
   },
   "dependencies": {
+    "@nathanfaucett/transform_components": "git@github.com:nathanfaucett/js-transform_components.git",
     "@nathanfaucett/scene_graph": "git@github.com:nathanfaucett/js-scene_graph.git",
     "@nathanfaucett/index_of": "^0.0.1",
     "@nathanfaucett/is_number": "^0.0.1",

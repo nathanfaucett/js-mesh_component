@@ -1,9 +1,13 @@
 var sceneGraph = require("@nathanfaucett/scene_graph"),
+    transformComponents = require("@nathanfaucett/transform_components"),
     Bone = require("./Bone"),
     MeshManager = require("./MeshManager");
 
 
 var Entity = sceneGraph.Entity,
+
+    Transform2D = transformComponents.Transform2D,
+    Transform3D = transformComponents.Transform3D,
 
     Component = sceneGraph.Component,
     ComponentPrototype = Component.prototype,
@@ -51,10 +55,12 @@ MeshPrototype.destructor = function() {
 };
 
 MeshPrototype.init = function() {
-    var geoBones = this.geometry.bones,
+    var entity = this.entity,
+        Transform = entity.getComponent("transform.Transform3D") ? Transform3D : Transform2D,
+        geoBones = this.geometry.bones,
         i = -1,
         il = geoBones.length - 1,
-        entity, bones, boneHash, geoBone, bone, transform, childEntity, parent;
+        bones, boneHash, geoBone, bone, transform, childEntity, parent;
 
     if (il !== -1) {
         entity = this.entity;
