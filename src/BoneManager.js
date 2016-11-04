@@ -11,7 +11,7 @@ module.exports = BoneManager;
 function BoneManager() {
     ComponentManager.call(this);
 }
-ComponentManager.extend(BoneManager, "odin.BoneManager", 10000);
+ComponentManager.extend(BoneManager, "mesh.BoneManager", 10000);
 BoneManagerPrototype = BoneManager.prototype;
 
 BoneManagerPrototype.sortFunction = function(a, b) {
