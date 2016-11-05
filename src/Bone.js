@@ -86,21 +86,20 @@ BonePrototype.update = function() {
         mat, position, scale, rotation,
         parent;
 
-    mat4.copy(uniform, transform.getMatrix());
+    mat4.copy(uniform, transform.getLocalMatrix());
 
     if (this.skinned !== false) {
         parent = entity.parent;
 
         if (parent && this.parentIndex !== -1) {
             mat = MAT;
-            mat4.copy(mat, entity.getComponent("mesh.Bone").uniform);
+            mat4.copy(mat, parent.getComponent("mesh.Bone").uniform);
 
             inheritPosition = this.inheritPosition;
             inheritScale = this.inheritScale;
             inheritRotation = this.inheritRotation;
 
             if (!inheritPosition || !inheritScale || !inheritRotation) {
-
                 position = POSITION;
                 scale = SCALE;
                 rotation = ROTATION;
