@@ -99,7 +99,7 @@ MeshPrototype.toJSON = function(json) {
 };
 
 MeshPrototype.fromJSON = function(json) {
-    var assets = this.entity.scene.assets;
+    var assets = this.entity.scene.application.assets;
 
     ComponentPrototype.fromJSON.call(this, json);
 
